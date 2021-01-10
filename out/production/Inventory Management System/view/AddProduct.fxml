@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddProductController">
+    <Label layoutX="30.0" layoutY="30.0" prefHeight="27.0" prefWidth="190.0" text="Add Product" underline="true">
+        <font>
+          <Font name="System Bold" size="18.0"/>
+        </font>
+    </Label>
+    <Label layoutX="30.0" layoutY="100.0" text="Product ID"/>
+    <TextField fx:id="productIdTextInputField" disable="true" editable="false" layoutX="130.0" layoutY="96.0"
+               prefHeight="25.0" prefWidth="190.0"/>
+    <Label layoutX="30.0" layoutY="150.0" text="Name"/>
+    <TextField fx:id="nameTextInputField" layoutX="130.0" layoutY="146.0" prefHeight="25.0" prefWidth="190.0"/>
+    <Label layoutX="30.0" layoutY="200.0" text="Inv"/>
+    <TextField fx:id="invTextInputField" layoutX="130.0" layoutY="196.0" prefHeight="25.0" prefWidth="190.0"/>
+    <Label layoutX="30.0" layoutY="250.0" text="Cost"/>
+    <TextField fx:id="costTextInputField" layoutX="130.0" layoutY="246.0" prefHeight="25.0" prefWidth="190.0"/>
+    <Label layoutX="30.0" layoutY="300.0" text="Min"/>
+    <TextField fx:id="minTextInputField" layoutX="130.0" layoutY="296.0" prefHeight="25.0" prefWidth="190.0"/>
+    <Label layoutX="30.0" layoutY="350.0" text="Max"/>
+    <TextField fx:id="maxTextInputField" layoutX="130.0" layoutY="346.0" prefHeight="25.0" prefWidth="190.0"/>
+    <AnchorPane layoutX="400.0" layoutY="30.0" prefHeight="500.0" prefWidth="400.0">
+        <TextField fx:id="searchTextInputField" layoutX="120.0" prefHeight="25.0" prefWidth="210.0"
+                   promptText="Search by Part ID or Name"/>
+        <Button layoutX="340.0" mnemonicParsing="false" onMouseClicked="#clickSearchButton" prefWidth="60.0"
+                text="Search"/>
+        <TableView fx:id="topTableView" layoutY="30.0" prefHeight="200.0" prefWidth="400.0">
+            <columns>
+                <TableColumn fx:id="allPartID" prefWidth="70.0" text="Part ID"/>
+                <TableColumn fx:id="allPartName" prefWidth="150.0" text="Part Name"/>
+                <TableColumn fx:id="allPartInvCount" prefWidth="85.0" text="Inv Count"/>
+                <TableColumn fx:id="allCostPerUnit" prefWidth="100.0" text="Cost/Unit"/>
+            </columns>
+        </TableView>
+        <Button layoutY="235.0" mnemonicParsing="false" onMouseClicked="#clickAddButton" prefWidth="60.0"
+                text="Add"/>
+        <TableView fx:id="bottomTableView" layoutY="280.0" prefHeight="200.0" prefWidth="400.0">
+            <columns>
+                <TableColumn fx:id="associatedPartID" prefWidth="70.0" text="Part ID"/>
+                <TableColumn fx:id="associatedPartName" prefWidth="150.0" text="Part Name"/>
+                <TableColumn fx:id="associatedInvCount" prefWidth="85.0" text="Inv Count"/>
+                <TableColumn fx:id="associatedCostPerUnit" prefWidth="100.0" text="Cost/Unit"/>
+            </columns>
+        </TableView>
+        <Button layoutY="485.0" mnemonicParsing="false" onMouseClicked="#clickRemoveAssociatedPartButton"
+                prefWidth="150.0" text="Remove Associated Part"/>
+    </AnchorPane>
+    <AnchorPane layoutX="600.0" layoutY="550.0" prefHeight="40.0" prefWidth="200.0">
+        <Button fx:id="saveButton" layoutX="140.0" layoutY="5.0" mnemonicParsing="false"
+                onMouseClicked="#clickSaveButton" prefWidth="60.0" text="Save" textFill="#16c92e">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Button>
+        <Button fx:id="cancelButton" layoutX="60.0" layoutY="5.0" mnemonicParsing="false"
+                onMouseClicked="#clickCancelButton" prefWidth="60.0" text="Cancel" textFill="RED">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Button>
+    </AnchorPane>
+</AnchorPane>
+
+        <!-- @author Austin Kim -->
