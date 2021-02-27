@@ -5,7 +5,7 @@ A "product" is a singular object that can be linked to a list of multiple "part"
  
  IDE: IntelliJ IDEA Community Edition 2020.2.4
  
- Java: SDK 11.0.8
+ Java: JDK 11.0.8
  
  JavaFX: SDK 11.0.2
  
